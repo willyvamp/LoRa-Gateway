@@ -3,9 +3,6 @@
 #include <FirebaseESP8266.h>
 #include <ESP8266WiFi.h>
 
-#ifdef ARDUINO_SAMD_MKRWAN1300
-#error "This example is not compatible with the Arduino MKR WAN 1300 board!"
-#endif
 
 /*-----------------------------------------------------
 Node MCU Pins                             SX1278 Pins
@@ -25,10 +22,20 @@ D2                                        DIO0
 #define FIREBASE_AUTH "GVqdZA3NZG0Tb7Lwl972oetFfzPrg6p1EaNl6NBX"
 */
 
-#define WIFI_SSID "Chi Hieu"
-#define WIFI_PASSWORD "hieunghia"
-#define API_KEY "wX8SQvGptM7mBv2e1bftXsOtmYKJulC2HzoJVV9A"
-#define DATABASE_URL "em-iot-default-rtdb.firebaseio.com"
+#define WIFI_SSID "DESKTOP-3BH3J0J 7626"
+#define WIFI_PASSWORD "44444444"
+
+//#define WIFI_SSID "Chi Hieu"
+//#define WIFI_PASSWORD "hieunghia"
+//#define WIFI_SSID "198/77 L2"
+//#define WIFI_PASSWORD "xincamon"
+//#define API_KEY "VeJuyQzWIscaA3tqCyfJqbbCEpqp5Ps65FckIWK3"
+//#define DATABASE_URL "test-d3eb4-default-rtdb.firebaseio.com"
+//#define API_KEY "VrogZwUIeVKTjpVEu8jGMwrsfelE7OxxEh1hOCCf"
+//#define DATABASE_URL "test-gateway-59dd3-default-rtdb.asia-southeast1.firebasedatabase.app"
+
+#define API_KEY "GdyGCUuszLA1unlBYskli7RTHJ83QusfXLXlGjjG"
+#define DATABASE_URL "fluttertest-28d13-default-rtdb.asia-southeast1.firebasedatabase.app"
 
 //Define LoRa Pins
 #define ss 15 //D8
@@ -38,7 +45,8 @@ D2                                        DIO0
 
 FirebaseData fbdt;
 int dataLoraOK;
-String dataSendFB, string_1, string_2, string_3, string_4, string_5, string_6, string_7, string_8;
+String dataSendFB, string_0, string_1, string_2, string_3, string_4, string_5, string_6, string_7, string_8;
+String string_9, string_10, string_11, string_12, string_13, string_14, string_15, string_16;
 byte comma;
 
 
@@ -67,9 +75,6 @@ void setup() {
     Serial.println("Starting LoRa failed!");
     while (1);
   }
-
-  // Uncomment the next line to disable the default AGC and set LNA gain, values between 1 - 6 are supported
-  // LoRa.setGain(6);
   
   // register the receive callback
   LoRa.onReceive(onReceive);
@@ -80,30 +85,51 @@ void setup() {
 
 void loop()
 {
-
     if(dataLoraOK == 1)
     {
-      string_1 = splitString(dataSendFB, ",", 0);
-      Firebase.setString(fbdt, "/Temperature", string_1);
-      string_2 = splitString(dataSendFB, ",", 1);
-      Firebase.setString(fbdt, "/Humidity", string_2);
-      string_3 = splitString(dataSendFB, ",", 2);
-      Firebase.setString(fbdt, "/Voltage", string_3);
-      string_4 = splitString(dataSendFB, ",", 3);
-      Firebase.setString(fbdt, "/Current", string_4);
-      string_5 = splitString(dataSendFB, ",", 4);
-      Firebase.setString(fbdt, "/Power", string_5);
-      string_6 = splitString(dataSendFB, ",", 5);
-      Firebase.setString(fbdt, "/Energy", string_6);
-      string_7 = splitString(dataSendFB, ",", 6);
-      Firebase.setString(fbdt, "/Frequency", string_7);
-      string_8 = splitString(dataSendFB, ",", 7);
-      Firebase.setString(fbdt, "/Power Factor", string_8);
-        // Serial.println(splitString(dataSendFB, ",", 5));
-      dataLoraOK = 0;
+      string_0 = splitString(dataSendFB, ",", 0);
+
+      if(string_0 == "1"){
+        string_1 = splitString(dataSendFB, ",",1);
+        Firebase.setString(fbdt, "Node1/Temperature", string_1);
+        string_2 = splitString(dataSendFB, ",", 2);
+        Firebase.setString(fbdt, "Node1/Humidity", string_2);
+        string_3 = splitString(dataSendFB, ",", 3);
+        Firebase.setString(fbdt, "Node1/Voltage", string_3);
+        string_4 = splitString(dataSendFB, ",", 4);
+        Firebase.setString(fbdt, "Node1/Current", string_4);
+        string_5 = splitString(dataSendFB, ",", 5);
+        Firebase.setString(fbdt, "Node1/Power", string_5);
+        string_6 = splitString(dataSendFB, ",", 6);
+        Firebase.setString(fbdt, "Node1/Energy", string_6);
+        string_7 = splitString(dataSendFB, ",", 7);
+        Firebase.setString(fbdt, "Node1/Frequency", string_7);
+        string_8 = splitString(dataSendFB, ",", 8);
+        Firebase.setString(fbdt, "Node1/Power Factor", string_8);
+          // Serial.println(splitString(dataSendFB, ",", 5));
+        dataLoraOK = 0;
+      }
+
+      if(string_0 == "2"){
+        string_9 = splitString(dataSendFB, ",",1);
+        Firebase.setString(fbdt, "Node2/Temperature", string_9);
+        string_10 = splitString(dataSendFB, ",", 2);
+        Firebase.setString(fbdt, "Node2/Humidity", string_10);
+        string_11 = splitString(dataSendFB, ",", 3);
+        Firebase.setString(fbdt, "Node2/Voltage", string_11);
+        string_12 = splitString(dataSendFB, ",", 4);
+        Firebase.setString(fbdt, "Node2/Current", string_12);
+        string_13 = splitString(dataSendFB, ",", 5);
+        Firebase.setString(fbdt, "Node2/Power", string_13);
+        string_14 = splitString(dataSendFB, ",", 6);
+        Firebase.setString(fbdt, "Node2/Energy", string_14);
+        string_15 = splitString(dataSendFB, ",", 7);
+        Firebase.setString(fbdt, "Node2/Frequency", string_15);
+        string_16 = splitString(dataSendFB, ",", 8);
+        Firebase.setString(fbdt, "Node2/Power Factor", string_16);
+        dataLoraOK = 0;
+      }
     }
-
-
 }
 
 void onReceive(int packetSize) 
