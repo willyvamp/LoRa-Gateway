@@ -34,8 +34,8 @@ D2                                        DIO0
 //#define API_KEY "VrogZwUIeVKTjpVEu8jGMwrsfelE7OxxEh1hOCCf"
 //#define DATABASE_URL "test-gateway-59dd3-default-rtdb.asia-southeast1.firebasedatabase.app"
 
-#define API_KEY "GdyGCUuszLA1unlBYskli7RTHJ83QusfXLXlGjjG"
-#define DATABASE_URL "fluttertest-28d13-default-rtdb.asia-southeast1.firebasedatabase.app"
+#define API_KEY "API_KEY"
+#define DATABASE_URL "URL"
 
 //Define LoRa Pins
 #define ss 15 //D8
