@@ -15,24 +15,9 @@ D2                                        DIO0
 ------------------------------------------------------*/
 
 //Define wifi
-/*
-#define WIFI_SSID "VNPT1"
-#define WIFI_PASSWORD "LeDucTho"
-#define FIREBASE_HOST "testproject-2ed9b-default-rtdb.firebaseio.com"
-#define FIREBASE_AUTH "GVqdZA3NZG0Tb7Lwl972oetFfzPrg6p1EaNl6NBX"
-*/
 
-#define WIFI_SSID "DESKTOP-3BH3J0J 7626"
-#define WIFI_PASSWORD "44444444"
-
-//#define WIFI_SSID "Chi Hieu"
-//#define WIFI_PASSWORD "hieunghia"
-//#define WIFI_SSID "198/77 L2"
-//#define WIFI_PASSWORD "xincamon"
-//#define API_KEY "VeJuyQzWIscaA3tqCyfJqbbCEpqp5Ps65FckIWK3"
-//#define DATABASE_URL "test-d3eb4-default-rtdb.firebaseio.com"
-//#define API_KEY "VrogZwUIeVKTjpVEu8jGMwrsfelE7OxxEh1hOCCf"
-//#define DATABASE_URL "test-gateway-59dd3-default-rtdb.asia-southeast1.firebasedatabase.app"
+#define WIFI_SSID "name"
+#define WIFI_PASSWORD "pass"
 
 #define API_KEY "API_KEY"
 #define DATABASE_URL "URL"
